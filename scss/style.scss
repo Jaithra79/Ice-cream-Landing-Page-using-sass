@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+
+@import "variables.scss";
+@import "mixins.scss";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    min-height: 100vh;
+    background-color: $primary-color;
+    color: white;
+    font-family: $siliguri-font;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.3rem;
+    font-size: 1.5rem;
+}
+
+.navbar{
+    padding: 3rem 0;
+    position: relative;
+
+    &__top{
+        @include flex(null, space-between);
+
+        &--brand{
+            font-size: 2.5rem;
+            text-decoration: none;
+            color: white;
+            position: relative;
+
+            span{
+                color: $secondary-color;
+            }
+            &::before{
+              position: absolute;
+              content: ""; 
+              top: -4px;
+              height: .2rem;
+              width: 1.5rem; 
+              background-color: white;
+            }
+        }
+    }
+}
