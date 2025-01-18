@@ -53,5 +53,38 @@ body{
               background-color: white;
             }
         }
+
+        &--toggler{
+            background-color: transparent;
+            border: none;
+            height: 3rem;
+            width: 3rem;
+            @include flex(column, space-evenly);
+            cursor: pointer;
+            @include transition;
+            z-index: 999;
+
+            &:hover{
+                opacity: 0.8;
+            }
+
+            .line{
+                background-color: white;
+                height: .2rem;
+                width: 100%;
+                @include transition;
+            }
+
+            &.change .line__1{
+                transform: rotate(45deg) translate(0.3rem , 0.8rem);
+            }
+            &.change .line__2{
+                opacity: 0;
+                visibility: hidden;
+            }
+            &.change .line__3{
+                transform: rotate(-45deg) translate(0.3rem , -0.8rem);
+            }
+        }
     }
 }
