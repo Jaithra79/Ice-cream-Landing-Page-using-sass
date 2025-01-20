@@ -24,7 +24,7 @@ body{
 .wrapper{
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0.3rem;
+    padding: 0 3rem;
     font-size: 1.5rem;
 }
 
@@ -34,7 +34,7 @@ body{
 
     &__top{
         @include flex(null, space-between);
-
+        
         &--brand{
             font-size: 2.5rem;
             text-decoration: none;
@@ -45,12 +45,12 @@ body{
                 color: $secondary-color;
             }
             &::before{
-              position: absolute;
-              content: ""; 
-              top: -4px;
-              height: .2rem;
-              width: 1.5rem; 
-              background-color: white;
+                position: absolute;
+                content: "";
+                top: -4px;
+                height: .2rem;
+                width: 1.5rem;
+                background-color: white;
             }
         }
 
@@ -76,15 +76,33 @@ body{
             }
 
             &.change .line__1{
-                transform: rotate(45deg) translate(0.3rem , 0.8rem);
+                transform: rotate(45deg) translate(0.3rem, 0.8rem);
             }
             &.change .line__2{
                 opacity: 0;
                 visibility: hidden;
             }
             &.change .line__3{
-                transform: rotate(-45deg) translate(0.3rem , -0.8rem);
+                transform: rotate(-45deg) translate(0.3rem, -0.8rem);
             }
+
+            @include desktop{
+                display: none;
+            }
+        }
+    }
+
+    &__collapse{
+        position: absolute;
+        top: calc(100% - 1rem);
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        height: 0;
+        @include transition;
+
+        &.show__nav{
+            height: 210px;
         }
     }
 }
